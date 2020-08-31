@@ -6,7 +6,7 @@ import hashlib
 import json
 import datetime  # save date to shop history.
 
-
+# hqwertyuiopasdfghjkl;zxcvbnm
 products = []
 user_info = {}
 user_dir = 'User info/'
