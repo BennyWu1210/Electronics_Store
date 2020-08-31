@@ -7,6 +7,8 @@ import json
 import datetime  # save date to shop history.
 
 # hqwertyuiopasdfghjkl;zxcvbnmzxcvbnmjhjh !
+#yichao was here
+
 products = []
 user_info = {}
 user_dir = 'User info/'
