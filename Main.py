@@ -6,18 +6,27 @@ import hashlib
 import json
 import datetime  # save date to shop history.
 
-# hqwertyuiopasdfghjkl;zxcvbnmzxcvbnmjhjh !
-#yichao was here
 
 products = []
 user_info = {}
 user_dir = 'User info/'
 logged_user = None
+product_dict = {Phones: 'Phones.csv',
+                Computers: 'Computers.csv',
+                CDs: 'CD.csv',
+                DVDs: 'DVD.csv'}
 
 # Aug 31
 # todo: 1. Optimize the sell function(perhaps create a virtual object to store the stock of a product's stock)
 #  2. generate product id (uuid?)
 #  3. Save id in the 'items' dictionary instead of name
+
+
+def read(file):
+    # todo reader and writer save as function
+    f = open("Encrypted password.csv")
+    reader = csv.reader(file, delimiter=',')
+    pass
 
 
 def take_info(user):
@@ -38,7 +47,8 @@ def create_account():
     creating = True
     while creating:
         valid = True
-        reader = csv.reader(r, delimiter=',')
+        f = open("Encrypted password.csv")
+        reader = csv.reader(f, delimiter=',')
         f = open('Encrypted password.csv', 'a')
         appender = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         user_name = input("Please create a user name:")
@@ -125,13 +135,30 @@ def check_out():
         logged_user.check_out(items)
 
 
+def create_products():
+    adding = True
+    while adding:
+        i = 0
+        _dict = {}
+
+        for product in product_dict.values():
+            i += 1
+            _dict[product] = i
+            print(str(i) + ": " + product)
+        types = input("choose the type of product:")
+        name = input('Name:')
+        price = input('Price:')
+        brand = input('Brand:')
+        color = input('Color:')
+        stock = input('Stock:')
+        warranty_time = input('warranty_time:')
+        warranty_cost = input('warranty_cost:')
+
+
+
+
 def store_products():
     product_dir = 'Products'
-    product_dict = {Phones: 'Phones.csv',
-                    Computers: 'Computers.csv',
-                    CDs: 'CD.csv',
-                    DVDs: 'DVD.csv'}
-
     for p in product_dict:
         types = p
         file = product_dir + '/' + product_dict[p]
@@ -144,10 +171,10 @@ def store_products():
         for i in range(len(info)):
             if types == Phones or types == Computers:
                 products.append(types(info[i][0], info[i][1], info[i][2], info[i][3],
-                                      info[i][4], info[i][5], info[i][6]))
+                                      info[i][4], info[i][5], info[i][6], info[i][7]))
 
             else:
-                products.append(types(info[i][0], info[i][1], info[i][2], info[i][3], info[i][4]))
+                products.append(types(info[i][0], info[i][1], info[i][2], info[i][3], info[i][4], info[i][5]))
 
         """QUESTION!!!
         How would you simplify the expression above regarding to storing the elements in the list to a class?"""

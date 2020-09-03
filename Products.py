@@ -1,6 +1,6 @@
 class Products:
-    def __init__(self, name, brand, price, stock):
-        # self.id = product_id
+    def __init__(self, product_id, name, brand, price, stock):
+        self.id = product_id
         self.name = name
         self.brand = brand
         self.price = price
@@ -17,47 +17,47 @@ class Products:
 
 
 class Devices(Products):
-    def __init__(self, name, brand, price, color, stock, warranty_time, warranty_cost):
-        Products.__init__(self, name, brand, price, stock)
+    def __init__(self, product_id, name, brand, price, color, stock, warranty_time, warranty_cost):
+        Products.__init__(self, product_id, name, brand, price, stock)
         self.warranty_cost = warranty_cost
         self.warranty_time = warranty_time
         self.color = color
 
 
 class Phones(Devices):
-    def __init__(self, name, price, brand, color, stock, warranty_time, warranty_cost):
-        Devices.__init__(self, name, brand, price, color, stock, warranty_time, warranty_cost)
+    def __init__(self, product_id, name, price, brand, color, stock, warranty_time, warranty_cost):
+        Devices.__init__(self, product_id, name, brand, price, color, stock, warranty_time, warranty_cost)
 
 
 class Computers(Devices):
-    def __init__(self, name, price, brand, color, stock, warranty_time, warranty_cost):
-        Devices.__init__(self, name, brand, price, color, stock, warranty_time, warranty_cost)
+    def __init__(self, product_id, name, price, brand, color, stock, warranty_time, warranty_cost):
+        Devices.__init__(self, product_id, name, brand, price, color, stock, warranty_time, warranty_cost)
 
 
 class Media(Products):
-    def __init__(self, name, brand, price, stock, time):
-        Products.__init__(self, name, brand, price, stock)
+    def __init__(self, product_id, name, brand, price, stock, time):
+        Products.__init__(self, product_id, name, brand, price, stock)
         self.time = time
 
 
 class CDs(Media):
-    def __init__(self, name, price, stock, brand, time):
-        Media.__init__(self, name, brand, price, stock, time)
+    def __init__(self, product_id, name, price, stock, brand, time):
+        Media.__init__(self, product_id, name, brand, price, stock, time)
 
 
 class DVDs(Media):
-    def __init__(self, name, price, stock, brand, time):
-        Media.__init__(self, name, brand, price, stock, time)
+    def __init__(self, product_id, name, price, stock, brand, time):
+        Media.__init__(self, product_id, name, brand, price, stock, time)
 
 
 class Accessories(Products):
-    def __init__(self, name, brand, price, stock):
-        Products.__init__(self, name, brand, price, stock)
+    def __init__(self, product_id, name, brand, price, stock):
+        Products.__init__(self, product_id, name, brand, price, stock)
 
 
 class Appliances(Products):
-    def __init__(self, name, brand, price, stock, warranty_time, warranty_cost):
-        Products.__init__(self, name, brand, price, stock)
+    def __init__(self, product_id, name, brand, price, stock, warranty_time, warranty_cost):
+        Products.__init__(self, product_id, name, brand, price, stock)
         self.warranty_cost = warranty_cost
         self.warranty_time = warranty_time
 
