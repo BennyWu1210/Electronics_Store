@@ -4,7 +4,8 @@ import csv
 import time
 import hashlib
 import json
-import datetime  # save date to shop history.
+import datetime  
+# todo : save date to shop history.
 
 
 products = []
