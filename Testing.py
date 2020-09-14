@@ -3,7 +3,10 @@ import csv
 import hashlib
 import json
 import User
+from datetime import *
 
+now = datetime.now().time()
+print(now)
 
 """def shopping_cart():
     print("Shopping cart")
@@ -45,7 +48,7 @@ import User
     # check out (can be a function): change the stock, remove card, add to history, receipt.
 shopping_cart()
 
-data = {}"""
+data = {}
 
 
 data['aaa'] = []
@@ -73,7 +76,7 @@ with open('User info.json', 'w') as outfile:
 # appending the data
 
 
-'''logged_user = None
+logged_user = None
 
 
 def login():
@@ -85,13 +88,13 @@ login()
 print(logged_user)
 lst = [x for x in range(10)]
 print(lst)
-print(x for x in range(10))'''
+print(x for x in range(10))
 
-"""password = input("Please create your password:")
+password = input("Please create your password:")
 hashed = hashlib.sha256(password.encode())
-print(hashed.hexdigest())"""
+print(hashed.hexdigest())
 
-'''
+
 f = open('User info.json', 'a')
 r = open('User info.json', 'r')
 writers = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -100,16 +103,16 @@ writers.writerow(['john', 'ben', 'cool'])
 writers.writerow(['benny', 1234])
 for i in reader_obj:
     print(i[0])
-'''
-"""
+
+
 f = open('Products/Phones.csv')
 john = 'john'
 reader_obj = csv.reader(f, delimiter=',')
 obj_writer = csv.writer(f, quotechar='"', quoting=csv.QUOTE_MINIMAL)
 obj_writer.writerow(john)
-obj_writer.writerow('hi')"""
+obj_writer.writerow('hi')
 
-"""rint(f.read())
+print(f.read())
 
 for i in reader:
     i[1] += str(1.0)

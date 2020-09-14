@@ -13,11 +13,11 @@ class User:
     def display_cart(self):
         print("This is what you currently have in your shopping cart:")
         for i in range(len(self.cart)):
-            print(i + ': ' + self.cart[i][0] + " $" + self.cart[i][1])
+            print(str(i+1) + ': ' + str(self.cart[i][1]) + ' ' + self.cart[i][0].name + " $" + str(float(self.cart[i][0].price)*self.cart[i][1]))
 
-    def check_out(self, items):
+    def check_out(self, items, time):
         for item in self.cart:
             product = item[0]
             qty = item[1]
             print("You've bought " + qty + " " + product.name + " for $" + product.price * qty)
-        self.history.append(items)
+        self.history.append({time: items})
